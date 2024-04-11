@@ -9,9 +9,9 @@ class DockerUtils {
 
     def buildAndPushImage(credentialsId, toolName) {
         steps.withDockerRegistry(credentialsId: credentialsId, toolName: toolName) {
-            steps.sh "docker build -t devopsWeb ."
-            steps.sh "docker tag chatbot prashant4875/devopsWeb:latest"
-            steps.sh "docker push prashant4875/devopsWeb:latest"
+            steps.sh "docker build -t devopsweb ."
+            steps.sh "docker tag chatbot prashant4875/devopsweb:latest"
+            steps.sh "docker push prashant4875/devopsweb:latest"
         }
     }
 }
