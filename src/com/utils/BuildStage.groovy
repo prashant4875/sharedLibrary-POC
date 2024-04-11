@@ -7,12 +7,9 @@ class BuildStage{
     }
     def execute(){
         steps.sh 'mvn clean package'
-
-        steps.post{
-            steps.success{
-                steps.echo 'Now Archiving...'
-                steps.archiveArtifacts artifacts: '**/target/*.war'
-            }
+        steps.echo 'Now Archiving...'
+        steps.archiveArtifacts artifacts: '**/target/*.war'
+            
         }
     }
 }
