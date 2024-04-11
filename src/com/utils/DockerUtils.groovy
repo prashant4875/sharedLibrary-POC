@@ -12,7 +12,7 @@ class DockerUtils {
             steps.sh "docker build -t devopsweb ."
             steps.sh "docker tag devopsweb prashant4875/devopsweb:latest"
             steps.sh "docker push prashant4875/devopsweb:latest"
-            steps.sh "docker run -d --name devopsweb -p 80:8282 prashant4875/devopsweb:latest"
+            steps.sh "docker run -d -p 80:8282 prashant4875/devopsweb:latest"
         }
     }
 }
