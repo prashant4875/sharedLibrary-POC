@@ -12,7 +12,6 @@ class DockerUtils {
             steps.sh "docker build -t devopsweb ."
             steps.sh "docker tag devopsweb prashant4875/devopsweb:latest"
             steps.sh "docker push prashant4875/devopsweb:latest"
-            steps.sh "docker kill ba8a8a c39ac12ee"
         }
     }
 }
