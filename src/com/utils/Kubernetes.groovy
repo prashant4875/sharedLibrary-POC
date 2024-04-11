@@ -15,9 +15,10 @@ class Kubernetes{
             credentialsId: config.credentialsId,
             namespace: config.namespace,
             restrictKubeConfigAccess: config.restrictKubeConfigAccess,
-            serverUrl: config.serverUrl
+            serverUrl: config.serverUrl,
         ) {
             steps.sh "kubectl apply -f ${config.manifestFilePath}"
+            steps.sh "kubectl set image deploy/devopsweb devopsweb=prashant4875/devopsweb:v${config.buildNumber} "
         }
     }
 }
